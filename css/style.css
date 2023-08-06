@@ -1,0 +1,329 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'inter';
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* NAVBAR STYLING STARTS */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: rgb(34, 38, 38);
+  color: #fff;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+/* LOGO */
+.logo img {
+  position: relative;
+  width: 150px;
+  top: -4px;
+}
+
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 2em;
+  font-size: 18px;
+  margin-right: -50px;
+}
+
+.menu li:hover {
+  background-color: #b15b3be7;
+  border-radius: 5px;
+  transition: 0.9s ease;
+}
+
+.menu li {
+  padding: 5px 54px;
+}
+
+/* DROPDOWN MENU */
+.services {
+  position: relative;
+}
+
+.dropdown {
+  background-color: rgb(1, 139, 139);
+  padding: 1em 0;
+  position: absolute;
+  display: none;
+  border-radius: 8px;
+  top: 35px;
+}
+
+.dropdown li+li {
+  margin-top: 10px;
+}
+
+.dropdown li {
+  padding: 0.5em 1em;
+  width: 8em;
+  text-align: center;
+}
+
+.dropdown li:hover {
+  background-color: #4c9e9e;
+}
+
+.services:hover .dropdown {
+  display: block;
+}
+
+
+input[type=checkbox] {
+  display: none;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+  .menu {
+      display: none;
+      position: absolute;
+      background-color: rgb(49, 54, 54);
+      right: 0;
+      left: 0;
+      text-align: center;
+      padding: 16px 0;
+  }
+
+  .menu li:hover {
+      display: inline-block;
+      transition: 0.3s ease;
+  }
+
+  .menu li+li {
+      margin-top: 12px;
+  }
+
+  input[type=checkbox]:checked~.menu {
+      display: block;
+  }
+
+  .hamburger {
+      display: block;
+  }
+
+  .dropdown {
+      left: 50%;
+      top: 30px;
+      transform: translateX(35%);
+  }
+
+  .dropdown li:hover {
+      background-color: #4c9e9e;
+  }
+}
+
+/* akhir navbar */
+
+
+
+
+.btn {
+  background-color: #5463FF;
+  border-radius: 20px;
+  padding: 8px 12px;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+
+
+.card {
+  background: #ECECEC;
+  max-width: 400px;
+  margin: 100px auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-sizing: border-box;
+  padding: 48px;
+  text-align: center;
+  position: relative;
+}
+
+
+.products {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.product {
+  position: absolute;
+  top: -px;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.product.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.thumbnail {
+  width: 100%;
+  /* Make sure the images take the full width of the container */
+  height: 200px;
+  /* Set a fixed height for the image container */
+  overflow: hidden;
+  /* Hide any overflow, so images won't be cropped */
+}
+
+
+.title {
+  margin: 0 0 12px;
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  font-weight: bold;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.description {
+  margin: 0 0 48px;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0 -12px -12px;
+}
+
+[ripple] {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+[ripple] .ripple {
+  position: absolute;
+  background: #FFFFFF;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-animation: ripple 2s;
+  animation: ripple 2s;
+}
+
+@-webkit-keyframes ripple {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0.2;
+  }
+
+  100% {
+    -webkit-transform: scale(20);
+    transform: scale(20);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0.2;
+  }
+
+  100% {
+    -webkit-transform: scale(20);
+    transform: scale(20);
+    opacity: 0;
+  }
+}
+
+
+
+.gede {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.card .tul1 h1 {
+  font-weight: bold;
+}
+
+.tul1 {
+  color: rgb(0, 0, 0);
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.namesec {
+  background-color: #5463FF;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.wp {
+  font-size: 24px;
+}
+
+
+/* Add this media query to apply styles for mobile screens */
+@media (max-width: 768px) {
+  .cards-container-3 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .cards-container-3 .col-lg-4 {
+    max-width: 100%;
+  }
+}
+
+.thumbnail {
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Menghilangkan outline pada gambar di dalam thumbnail */
+.thumbnail img {
+  outline: none;
+}
